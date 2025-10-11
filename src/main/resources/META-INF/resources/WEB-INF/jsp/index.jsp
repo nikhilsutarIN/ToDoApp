@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+<header>
+    <div class="brand"><a href="/">Todo</a></div>
+    <nav class="navbar-actions">
+        <a href="/signin" class="btn btn-ghost">Sign in</a>
+        <a href="/signup" class="btn btn-primary">Sign up</a>
+    </nav>
+</header>
+
+<main>
+    <section class="container hero">
+        <img src="images/hero.jpg" alt="ToDo Home Page">
+
+        <div class="hero-content">
+            <h1 id="hero-title">Organize your day, one task at a time</h1>
+            <p>Plan, and track your progress with a fast, simple, and beautiful todo app.</p>
+        </div>
+    </section>
+
+    <section class="container features">
+        <article class="feature">
+            <div class="feature-image">
+                <img src="images/feature1.jpg" alt="Feature1">
+            </div>
+            <div class="feature-content">
+                <h2>Simple Design</h2>
+                <p>Create tasks with description, nothing falls through the cracks.</p>
+            </div>
+        </article>
+
+        <article class="feature reverse">
+            <div class="feature-image">
+                <img src="images/feature2.jpg" alt="Feature 2">
+            </div>
+            <div class="feature-content">
+                <h2>Easy Functionality</h2>
+                <p>Click toggle button to toggle task and click delete button to delete a task.</p>
+            </div>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <div class="container">&copy; 2025 Todo</div>
+</footer>
+
+</body>
+</html>
