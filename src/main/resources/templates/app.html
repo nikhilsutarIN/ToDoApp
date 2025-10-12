@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+  <link href="https://fonts.cdnfonts.com/css/config-condensed" rel="stylesheet">
+  <link rel="stylesheet" href="/css/todo.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="nav-logo">
+      <a href="/">ToDo</a>
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="container">
+
+  <div class="add-todo">
+    <form class="add-todo-form" action="/app/" method="POST">
+      <div>
+        <input class="add-todo-input" type="text" name="title" minlength="1" maxlength="50" placeholder="Add a new task" required>
+      </div>
+      <div>
+        <input class="add-todo-input" type="text" name="description" minlength="1" maxlength="50" placeholder="Description">
+      </div>
+      <div>
+        <input class="add-todo-submit" type="submit" value="Add">
+      </div>
+    </form>
+  </div>
+
+  <div class="todos">
+    <div th:each="todo: ${todos}" class="todo-item">
+      <div th:classappend="${todo.status} ? 'todo-icon completed' : 'todo-icon not-completed'">
+        <img th:src="@{todo.status} ? @{/images/done_icon.svg} : @{/images/incomplete_circle.svg}" alt="icon">
+      </div>
+
+      <div class="todo-content">
+        <div class="todo-title">[[${todo.title}]]</div>
+        <div class="todo-description">[[${todo.description}]]</div>
+      </div>
+
+      <div class="todo-actions">
+        <a class="action-toogle" th:href="@{/app/{id}/toggle(id=${todo.id})}"><img th:src="@{/images/done_icon.svg}"></a>
+        <a class="action-delete" th:href="@{/app/{id}/delete(id=${todo.id})}"><img th:src="@{/images/delete_icon.svg}"></a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

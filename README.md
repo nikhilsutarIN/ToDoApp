@@ -1,7 +1,7 @@
 # ToDo App
 
 View it live: 
-[Todo App]()
+[Todo App](https://todoapp-f9zz.onrender.com/)
 
 A simple, sleek, and responsive To-Do application to manage tasks efficiently.
 
@@ -27,7 +27,8 @@ Mark a task as completed or delete a task
 
 ## Tech Stack:
 ### Frontend
-- JSP
+- HTML
+- Thymeleaf
 - CSS
 
 ### Backend
@@ -38,3 +39,4 @@ Mark a task as completed or delete a task
 ### Dev Tools
 - Git and Github
 - VS Code, Eclipse
+- Deployed on Render
