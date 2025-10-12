@@ -1,4 +1,4 @@
-package com.deepanalysis.todoapp;
+package com.github.nikhilsutarIN.todoapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
