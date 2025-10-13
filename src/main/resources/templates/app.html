@@ -41,7 +41,8 @@
   <div class="todos">
     <div th:each="todo: ${todos}" class="todo-item">
       <div th:classappend="${todo.status} ? 'todo-icon completed' : 'todo-icon not-completed'">
-        <img th:src="@{todo.status} ? @{/images/done_icon.svg} : @{/images/incomplete_circle.svg}" alt="icon">
+        <img th:if="${todo.status}" th:src="@{/images/done_icon.svg}" alt="done icon" />
+        <img th:unless="${todo.status}" th:src="@{/images/incomplete_circle.svg}" alt="incomplete icon" />
       </div>
 
       <div class="todo-content">
@@ -50,7 +51,7 @@
       </div>
 
       <div class="todo-actions">
-        <a class="action-toogle" th:href="@{/app/{id}/toggle(id=${todo.id})}"><img th:src="@{/images/done_icon.svg}"></a>
+        <a class="action-toggle" th:href="@{/app/{id}/toggle(id=${todo.id})}"><img th:src="@{/images/done_icon.svg}"></a>
         <a class="action-delete" th:href="@{/app/{id}/delete(id=${todo.id})}"><img th:src="@{/images/delete_icon.svg}"></a>
       </div>
     </div>
