@@ -25,7 +25,7 @@ Mark a task as completed or delete a task
 
 ![Task actions](github-images/2_actions.png)
 
-## Tech Stack:
+## Tech Stack
 ### Frontend
 - HTML
 - Thymeleaf
