@@ -28,15 +28,15 @@ Mark a task as completed or delete a task
 ## Tech Stack
 ### Frontend
 - HTML
-- Thymeleaf
 - CSS
+- Thymeleaf (for server-side rendering)
 
 ### Backend
 - Spring Boot
-- Spring Security for authentication/authorization
 - MySQL
 
 ### Dev Tools
-- Git and Github
-- VS Code, Eclipse
+- Git and GitHub
+- Visual Studio Code, Eclipse
 - Deployed on Render
+- Database hosted on Aiven
