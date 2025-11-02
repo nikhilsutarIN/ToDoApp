@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -31,7 +32,15 @@ public class TodoController {
 
             List<Todo> todos = todoService.getTasksById(user.getId());
 
-            model.addAttribute("todos", todos);
+            List<Todo> reverseTodo = new ArrayList<>();
+
+            for(int i = todos.size() - 1; i >= 0; i--) {
+                reverseTodo.add(todos.get(i));
+            }
+
+//            model.addAttribute("todos", todos);
+            model.addAttribute("todos", reverseTodo);
+
 
 //            model.addAttribute("firstname", user.getFirstname());
 //            model.addAttribute("lastname", user.getLastname());

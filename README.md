@@ -1,7 +1,7 @@
 # ToDo App
 
 View live demo: 
-[Todo App](https://todoapp-f9zz.onrender.com/) (Wait for the service to wake up) 
+[Todo App](https://todoapp-f9zz.onrender.com/)
 
 A simple, sleek, and responsive To-Do application to manage tasks efficiently.
 
