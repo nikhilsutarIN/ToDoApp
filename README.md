@@ -1,7 +1,7 @@
 # ToDo App
 
 View live demo: 
-[Todo App](https://todoapp-f9zz.onrender.com/)
+[Todo App](https://todoapp-f9zz.onrender.com/) (allow upto 1-4 minutes to load)
 
 A simple, sleek, and responsive To-Do application to manage tasks efficiently.
 
@@ -38,5 +38,6 @@ Mark a task as completed or delete a task
 ### Dev Tools
 - Git and GitHub
 - Visual Studio Code, Eclipse
+- ~~Deployed on Microsoft Azure~~
 - Deployed on Render
 - Database hosted on Aiven
