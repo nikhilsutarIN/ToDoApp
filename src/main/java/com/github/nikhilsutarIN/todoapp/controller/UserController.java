@@ -45,16 +45,4 @@ public class UserController {
         return "signin";
     }
 
-//    @PostMapping("/signin")
-//    public String signin(@RequestParam String username, @RequestParam String password, HttpSession session) {
-//        User u = userService.findUser(username);
-//        if(u != null && password.equals(u.getPassword())) {
-//            session.setAttribute("user", u);
-//            return "redirect:/app/";
-//        } else {
-//            System.out.println("Invalid username or password");
-//            return "redirect:/signin";
-//        }
-//    }
-
 }
