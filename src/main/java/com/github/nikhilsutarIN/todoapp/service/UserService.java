@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
 @Service
 public class UserService {
 
@@ -18,6 +16,7 @@ public class UserService {
     private BCryptPasswordEncoder passwordEncoder;
 
     public User addUser(User u) {
+
         User existingUser = userRepository.findByEmail(u.getEmail()).orElse(null);
 
         if (existingUser != null) {
@@ -30,13 +29,22 @@ public class UserService {
         user.setEmail(u.getEmail());
         user.setPassword(passwordEncoder.encode(u.getPassword()));
         user.setRole("ROLE_USER");
-        user.setTodos(new ArrayList<>());
 
         return userRepository.save(user);
     }
 
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email).orElse(null);
+    }
+
+    public Integer getUserIdByEmail(String email) {
+        User user = userRepository.findByEmail(email).orElse(null);
+
+        if (user != null) {
+            return user.getId();
+        }
+
+        return null;
     }
 
 }

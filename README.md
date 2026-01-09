@@ -33,11 +33,11 @@ Mark a task as completed or delete a task
 
 ### Backend
 - Spring Boot
-- MongoDB
+- MySQL
 
 ### Dev Tools
 - Git and GitHub
 - Visual Studio Code, Eclipse
 - ~~Deployed on Microsoft Azure~~
 - Deployed on Render
-- Database hosted on MongoDB Atlas
+- Database hosted on Aiven

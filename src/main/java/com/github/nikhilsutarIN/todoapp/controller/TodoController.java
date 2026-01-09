@@ -25,18 +25,25 @@ public class TodoController {
 
     @GetMapping("/")
     public String getTasks(Model model, Principal p) {
+
         User user = userService.findUserByEmail(p.getName());
 
         if(user != null) {
+
             List<Todo> todos = todoService.getTasksById(user.getId());
 
-            // New tasks appear on top
             List<Todo> reverseTodo = new ArrayList<>();
+
             for(int i = todos.size() - 1; i >= 0; i--) {
                 reverseTodo.add(todos.get(i));
             }
 
+//            model.addAttribute("todos", todos);
             model.addAttribute("todos", reverseTodo);
+
+
+//            model.addAttribute("firstname", user.getFirstname());
+//            model.addAttribute("lastname", user.getLastname());
 
             return "app";
         }
@@ -54,18 +61,30 @@ public class TodoController {
     }
 
     @GetMapping("/{id}/toggle")
-    public String toggleTask(@PathVariable String id, Principal p) {
-        if(id != null) {
-            todoService.toggleTask(id, p.getName());
+    public String toggleTask(@PathVariable int id, Principal p) {
+
+        String email = userService.findUserByEmail(p.getName()).getEmail();
+        Integer user_id = userService.getUserIdByEmail(email);
+        Integer task_user_id = todoService.getUserIdByTaskId(id);
+
+        if(user_id != null && user_id.equals(task_user_id)) {
+            todoService.toggleTask(id);
         }
 
         return "redirect:/app/";
     }
 
     @GetMapping("/{id}/delete")
-    public String deleteTask(@PathVariable String id, Principal p) {
-        if(id != null) {
-            todoService.deleteTask(id, p.getName());
+    public String deleteTask(@PathVariable int id, Principal p) {
+
+//        todoService.deleteTask(id);
+
+        String email = userService.findUserByEmail(p.getName()).getEmail();
+        Integer user_id = userService.getUserIdByEmail(email);
+        Integer task_user_id = todoService.getUserIdByTaskId(id);
+
+        if(user_id != null && user_id.equals(task_user_id)) {
+            todoService.deleteTask(id, email);
         }
 
         return "redirect:/app/";
